@@ -1,10 +1,4 @@
 <!-- 1.0 搜索框 -->
-<!-- <view class="search-box">
-  <view class="search">
-    <icon class="search-icon" size="18" type="search"></icon>
-    <text class="search-text">搜索</text>
-  </view>
-</view> -->
 <search></search>
 <!-- 2.0 轮播图 -->
 <swiper class="slider" indicator-dots circular autoplay interval="2000" indicator-color="(255,255,255,0.7)" indicator-active-color="#fff">
