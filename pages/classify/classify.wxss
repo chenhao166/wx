@@ -43,20 +43,20 @@
 /*  */
 .classify-right-title{
   text-align: center;
-  margin:50rpx 0;
+  margin:30rpx 0;
 }
 /* 小斜杠 */
 .classify-right-title::before,
 .classify-right-title::after{
   content: "/";
   color: #ccc;
-  margin: 0 16rpx;
+  margin: 0 10rpx;
 }
 .classify-right-item-image{
   width:120rpx;
-  height:100rpx;
+  height:120rpx;
   background-color: #ccc;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
 .classify-right-list{
   display: flex;
@@ -65,5 +65,5 @@
 .classify-right-item{
   width:33.33%;
   text-align: center;
-  margin: 30rpx 0;
+  margin: 20rpx 0;
 }
