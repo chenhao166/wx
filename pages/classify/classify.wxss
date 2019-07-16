@@ -1,0 +1,69 @@
+/* 分类内容 */
+.classify{
+ display: flex;
+ position: absolute;
+  left:0;
+  right:0;
+  top: 100rpx;
+  bottom:0;
+}
+/* 左侧 */
+.classify-left{
+  background-color: #f4f4f4;
+  width:200rpx; 
+  flex-shrink: 0;
+}
+/* 右侧 */
+.classify-right{
+  background-color: #fff;
+  flex: 1;
+}
+.classify-left-item{
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+/* 交集选择器 */
+.classify-left-item.active{
+  color: #eb4450;
+  background-color: #fff;
+}
+/* 用伪元素画盒子 */
+.classify-left-item.active::before{
+  content:"";
+  width:10rpx;
+  background-color: #eb4450;
+  /* 用定位拉缩盒子 */
+  position: absolute;
+  left: 10rpx;
+  top:20rpx;
+  bottom:20rpx;
+}
+/*  */
+.classify-right-title{
+  text-align: center;
+  margin:50rpx 0;
+}
+/* 小斜杠 */
+.classify-right-title::before,
+.classify-right-title::after{
+  content: "/";
+  color: #ccc;
+  margin: 0 16rpx;
+}
+.classify-right-item-image{
+  width:120rpx;
+  height:100rpx;
+  background-color: #ccc;
+  margin-bottom: 20rpx;
+}
+.classify-right-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.classify-right-item{
+  width:33.33%;
+  text-align: center;
+  margin: 30rpx 0;
+}

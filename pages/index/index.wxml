@@ -1,0 +1,48 @@
+<!-- 1.0 搜索框 -->
+<!-- <view class="search-box">
+  <view class="search">
+    <icon class="search-icon" size="18" type="search"></icon>
+    <text class="search-text">搜索</text>
+  </view>
+</view> -->
+<search></search>
+<!-- 2.0 轮播图 -->
+<swiper class="slider" indicator-dots circular autoplay interval="2000" indicator-color="(255,255,255,0.7)" indicator-active-color="#fff">
+  <block wx:for="{{ slider }}" wx:key="goods_id">
+    <swiper-item>
+      <image class="slider-image" src="{{ item.image_src }}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 3.0 导航入口 -->
+<view class="enter">
+  <block wx:for="{{ enter }}" wx:key="name">
+    <view class="enter-item">
+      <image class="enter-item-image" src="{{ item.image_src }}"></image>
+    </view>
+  </block>
+</view>
+<!-- 4.0 楼层 -->
+<!-- 一层循环 -->
+<block wx:for="{{ floor }}" wx:key="">
+<view class="floor-head">
+  <image class="floor-head-image" src="{{ item.floor_title.image_src }}"></image>
+</view>
+<view class="floor-body">
+  <view class="floor-body-left">
+    <image class="floor-body-left-image" src="{{  item.product_list[0].image_src }}"></image>
+  </view>
+  <!-- 二层循环 -->
+  <view class="floor-body-right">
+  <!-- 条件渲染 wx:if -->
+  <!-- 修改二层循环里面的 index和item -->
+    <block wx:for="{{ item.product_list }}" wx:key="name" wx:for-item="item2" wx:for-index="index2">
+      <image class="floor-body-right-image" wx:if="{{index2 > 0}}" src="{{ item2.image_src }}"></image>
+    </block>
+  </view>
+</view>
+</block>
+<!-- 5.0 返回顶部 -->
+<view hidden="{{ !showTop }}" class="top" bindtap="goTop" data-top="{{ 0 }}">
+  <text class="top-text">顶部</text>
+</view>

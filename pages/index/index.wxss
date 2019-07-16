@@ -1,0 +1,73 @@
+/* .search-box{
+  background-color: #eb4450;
+  padding: 21rpx 16rpx;
+}
+.search{
+  background-color: #fff;
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+}
+.search-text{
+  color: rgb(167, 164, 164);
+  font-size: 38rpx;
+  margin-left: 10rpx;
+} */
+/* 轮播 */
+slider,
+.slider-image{
+  width:100%;
+  height: 340rpx;
+}
+/* 导航入口 */
+.enter{
+  display: flex;
+  padding: 25rpx 0;
+}
+.enter-item{
+ flex: 1;
+ text-align: center
+}
+.enter-item-image{
+  width:128rpx;
+  height: 140rpx;
+}
+/* 楼层 */
+.floor-head{
+  padding-top: 16rpx;
+  background-color: #f4f4f4;
+}
+.floor-head-image{
+  width:100%;
+  height: 59rpx;
+}
+.floor-body{
+   margin-top: 16rpx;
+  display: flex
+}
+.floor-body-left-image{
+  width:232rpx;
+  height: 386rpx;
+}
+
+.floor-body-right-image{
+ width: 233rpx;
+ height: 188rpx;
+ margin-left: 20rpx;
+ margin-bottom: 13rpx;
+}
+/* 返回顶部 */
+.top {
+  width:90rpx;
+  height:90rpx;
+  background-color:rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  position:fixed;
+  right: 30rpx;
+  bottom: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

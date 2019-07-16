@@ -1,0 +1,17 @@
+/* components/search/search.wxss */.search-box{
+  background-color: #eb4450;
+  padding: 21rpx 16rpx;
+}
+.search{
+  background-color: #fff;
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+}
+.search-text{
+  color: rgb(167, 164, 164);
+  font-size: 38rpx;
+  margin-left: 10rpx;
+}

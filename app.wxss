@@ -1,0 +1,5 @@
+/**app.wxss**/
+image{
+  /* background-color: #ccc; */
+  vertical-align: top;
+}

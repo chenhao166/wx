@@ -1,0 +1,7 @@
+<view class="search-box">
+  <view class="search">
+    <icon class="search-icon" size="18" type="search"></icon>
+    <text class="search-text">搜索</text>
+  </view>
+</view>
+  
