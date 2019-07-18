@@ -9,11 +9,16 @@ Page({
   data: {
     //初始化关键词
     query:"",
+    //tab栏的索引
     activeIndex:0,
     // 数据列表初始化
     goodsList:[],
-
-    cid: 0
+    //商品分类id
+    cid: 0,
+    //页码
+    pagenum:2,
+    //页数
+    pagesize:20
   },
 
   /**
@@ -29,19 +34,25 @@ Page({
       query,
       cid
     })
+    //pagenum 和pagesize从data中解构出来
+    const{ pagenum, pagesize } = this.data
     // 调用（这个也要传keyword这个参数）
-    this.getListData(query,cid)
+    this.getListData({
+      query, 
+      cid,
+      pagenum,
+      pagesize
+    })
   },
 
   // 请求数据
-  getListData(query,cid){
+  getListData(params){
     request({
       // url:"goods/search?query=" + query + "&cid=" + cid,
       url: "goods/search",
       //请求参数
       data:{
-        query,
-        cid
+       ...params
       }
     })
     .then(res=>{
