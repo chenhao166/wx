@@ -1,4 +1,5 @@
-/* components/search/search.wxss */.search-box{
+/* components/search/search.wxss */
+.search-box{
   background-color: #eb4450;
   padding: 21rpx 16rpx;
 }
