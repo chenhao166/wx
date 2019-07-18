@@ -36,7 +36,13 @@ Page({
   // 请求数据
   getListData(query,cid){
     request({
-      url:"goods/search?query=" + query + "&cid=" + cid,
+      // url:"goods/search?query=" + query + "&cid=" + cid,
+      url: "goods/search",
+      //请求参数
+      data:{
+        query,
+        cid
+      }
     })
     .then(res=>{
       console.log(res)
