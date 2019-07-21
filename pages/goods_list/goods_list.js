@@ -12,13 +12,15 @@ Page({
     //tab栏的索引
     activeIndex:0,
     // 数据列表初始化
-    goodsList:[],
+    goods:[],
     //商品分类id
     cid: 0,
     //页码
-    pagenum:2,
+    pagenum:1,
     //页数
-    pagesize:20
+    pagesize:20,
+    //
+    hasMore:true
   },
 
   /**
@@ -56,11 +58,36 @@ Page({
       }
     })
     .then(res=>{
-      console.log(res)
+      // console.log(res)
       const{ goods } = res
       this.setData({
-        goodsList: goods
+        // 把原数据展开，把新数据展开，连接成新数组
+        goods: [...this.data.goods, ...goods]
       })
+      // 判断goods和pagesize的长度
+      if (goods.length < this.data.pagesize) {
+        //没有数据时，给用户提示
+        wx.showToast({
+          title: '没有更多数据了',
+          icon: 'success',
+          duration: 2000
+        })
+        //改变hasMore 变成false
+        this.setData({
+          hasMore:false
+        })
+      }
+    })
+  },
+  //点击商品，跳转相应的商品详情页
+
+  goToDail(event){
+    // console.log(event)
+    const { id } = event.currentTarget.dataset
+    // console.log(id)
+    // 用wxAPI来跳转页面
+    wx.navigateTo({
+      url: '/pages/goods_detail/goods_detail?goods_id=' + id 
     })
   },
 
@@ -96,14 +123,55 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    // console.log(123)
+    //页面重新从pagenum1开始，商品列表先清空
+    const{ query,cid,pagesize } = this.data;
+    //重新设置请求页码
+    const pagenum = 1;
+    //把页面数据清空
+    this.setData({
+      goods: [],
+      pagenum
+    })
+    //重新发起数据请求
+    this.getListData({
+      query,
+      cid,
+      pagenum,
+      pagesize,
+      hasMore:true
+    })
+    //数据请求完成后，停止下拉动画
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    // console.log('上拉触底')
+    //解构
+    let { query,cid,pagenum,pagesize,hasMore } = this.data;
+    //如果hasMore为false则直接返回
+    if(!hasMore){
+      //没有数据时，给用户提示
+      wx.showToast({
+        title: '没有更多数据了',
+        icon: 'success',
+        duration: 2000
+      })
+      return
+    }
+    //上拉触底时页码+1
+    pagenum++;
+    //更新data中的pagenum
+    this.setData({
+      pagenum
+    })
+    //重新请求数据
+    this.getListData({
+     query, cid ,pagenum, pagesize
+    })
   },
 
   /**

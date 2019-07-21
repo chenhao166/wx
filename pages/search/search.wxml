@@ -1,0 +1,33 @@
+<!-- 搜索框 -->
+<view  class="search-box">
+  <view class="search">
+    <icon class="search-icon" size="16" type="search"></icon>
+    <input 
+    type="text"
+    confirm-type="search"
+    class="search-input" 
+    bindinput="inputChange"
+    bindconfirm="inputSubmit"
+    value="{{ query }}" 
+    placeholder="请输入您想要的商品"
+    >{{ query }}</input>
+  </view>
+</view>
+<!-- 历史搜索记录 -->
+<view class="search-history">
+  <view class="search-history-title">
+    <text class="search-history-title-text">历史搜索</text>
+    <icon bindtap="removeHistory" class="search-history-title-icon" type="clear" size="36rpx"></icon>
+  </view>
+  <view class="search-history-list">
+    <block wx:for="{{ historyList }}" wx:key="*this">
+      <view class="search-history-item">{{ item }}</view>
+    </block>
+  </view>
+</view>
+<!-- 搜索提示 -->
+<scroll-view scroll-y class="searchTips" hidden="{{ !showTips }}">
+ <block wx:for="{{ tipsList }}" wx:key="goods_id" >
+  <view class="searchTips-item">{{ item.goods_name }}</view>
+ </block>
+</scroll-view>

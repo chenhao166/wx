@@ -12,11 +12,15 @@
   background-color: #f4f4f4;
   width:200rpx; 
   flex-shrink: 0;
+ /* 部分机型，scoll-view不加高度，无法局部滚动 */
+  height:100%;
 }
 /* 右侧 */
 .classify-right{
   background-color: #fff;
   flex: 1;
+  /* 部分机型，scoll-view不加高度，无法局部滚动 */
+  height:100%;
 }
 .classify-left-item{
   line-height: 100rpx;

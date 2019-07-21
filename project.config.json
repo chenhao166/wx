@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -50,38 +50,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 1,
 					"name": "商品分类页",
 					"pathName": "pages/goods_list/goods_list",
-					"query": "keyword=小米",
+					"query": "query=TCL&cid=10",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "pages/goods_list/goods_list",
-					"pathName": "pages/goods_list/goods_list",
-					"query": "keyword=\"小米\"",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/goods_list/goods_list",
-					"pathName": "pages/goods_list/goods_list",
-					"query": "keyword=小米",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/goods_list/goods_list",
-					"pathName": "pages/goods_list/goods_list",
-					"query": "keyword=TCL",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/goods_list/goods_list",
-					"pathName": "pages/goods_list/goods_list",
-					"query": "keyword=海信",
+					"name": "搜索页",
+					"pathName": "pages/search/search",
+					"query": "query=TCL",
 					"scene": null
 				}
 			]
