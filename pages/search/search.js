@@ -100,6 +100,14 @@ Page({
     })
     // //2.2同步版本
     // wx.setStorageSync('historyList', historyList)
+
+    // 按下搜索键，跳转到商品列表页
+    // wx.navigateTo({
+    //   url: '/pages/goods_list/goods_list?query=' + value
+    // })
+    wx.redirectTo({
+      url: '/pages/goods_list/goods_list?query=' + value
+    })
   },
   //点击图标清空搜索历史列表
   //异步方法

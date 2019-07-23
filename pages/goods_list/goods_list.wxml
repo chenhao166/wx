@@ -1,7 +1,7 @@
 <!--pages/goods_list/goods_list.wxml-->
 <!-- 搜索框 -->
  <!-- 页面跳转写法一，通过navigator来跳转 -->
-<navigator url="/pages/search/search?query={{ query }}" class="search-box">
+<navigator open-type="redirect" url="/pages/search/search?query={{ query }}" class="search-box">
   <view class="search">
     <icon class="search-icon" size="16" type="search"></icon>
     <text class="search-text">{{ query }}</text>

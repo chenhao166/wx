@@ -55,6 +55,8 @@ Page({
       // delete 可以删除对象params中cid
       delete params.cid
     }
+    //也可以写成这样
+    //if(!params.cid) delete params.cid
     request({
       // url:"goods/search?query=" + query + "&cid=" + cid,
       url: "goods/search",

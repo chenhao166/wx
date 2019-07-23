@@ -22,7 +22,8 @@
   <view class="search-history-list">
     <block wx:for="{{ historyList }}" wx:key="*this">
       <!-- 搜索页过去的 params.cid的值为undefined -->
-      <navigator url="/pages/goods_list/goods_list?query={{ item }}" class="search-history-item">{{ item }}</navigator>
+      <!--  open-type="redirect" 替换页面  -->
+      <navigator open-type="redirect" url="/pages/goods_list/goods_list?query={{ item }}" class="search-history-item">{{ item }}</navigator>
     </block>
   </view>
 </view>
