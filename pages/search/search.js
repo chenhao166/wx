@@ -12,6 +12,8 @@ Page({
     showTips:false,
     tipsList: []
   },
+  //设置tiemr变量
+  tiemr:null,
 
   /**
    * 生命周期函数--监听页面加载
@@ -31,18 +33,25 @@ Page({
     // console.log(event)
     const { value } = event.detail;
     // console.log(value)
-    if(!value){
-      //为空隐藏提示框
+    // .trim()去掉多余的空格发起的请求
+    if(!value.trim()){
+      //搜索词为空隐藏提示框
       this.setData({
         showTips: false
       })
       //并退出函数，不发起请求
-      return
-    } else{
-      //否则调用方法，发起请求，获取数据
-      this.getTipsData(value)
-    }
+      return;
+    } 
+      //清除上一个定时器
+      clearTimeout(this.timer);
+      //通过定时器让请求等一等
+      this.timer = setTimeout(()=>{
+        //调用方法，发起请求，获取数据
+        this.getTipsData(value)
+      },500)
+    
   },
+  //封闭请求数据的方法
   getTipsData(value){
     request({
       url: "goods/qsearch",
