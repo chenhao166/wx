@@ -31,28 +31,41 @@ Page({
     // console.log(event)
     const { value } = event.detail;
     // console.log(value)
+    if(!value){
+      //为空隐藏提示框
+      this.setData({
+        showTips: false
+      })
+      //并退出函数，不发起请求
+      return
+    } else{
+      //否则调用方法，发起请求，获取数据
+      this.getTipsData(value)
+    }
+  },
+  getTipsData(value){
     request({
-      url:"goods/qsearch",
-      data:{
+      url: "goods/qsearch",
+      data: {
         query: value
       }
     })
-    .then(res=>{
-      console.log(res)
-      this.setData({
-        showTips:true,
-        tipsList:res || []
+      .then(res => {
+        console.log(res)
+        this.setData({
+          showTips: true,
+          tipsList: res || []
+        })
+        if (res) {
+          this.setData({
+            showTips: true
+          })
+        } else {
+          this.setData({
+            showTips: false
+          })
+        }
       })
-      if(res){
-        this.setData({
-          showTips: true
-        })
-      } else{
-        this.setData({
-          showTips: false
-        })
-      }
-    })
   },
   //bindconfirm="inputSubmit" 表单输入完成后点完成后触发
   inputSubmit(event) {
