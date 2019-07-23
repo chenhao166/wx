@@ -49,6 +49,12 @@ Page({
 
   // 请求数据
   getListData(params){
+    // console.log(params)
+    //从搜索页过来的 params.cid的值为undefined,就把它删除，再发送请求
+    if (!params.cid){
+      // delete 可以删除对象params中cid
+      delete params.cid
+    }
     request({
       // url:"goods/search?query=" + query + "&cid=" + cid,
       url: "goods/search",

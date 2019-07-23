@@ -21,7 +21,8 @@
   </view>
   <view class="search-history-list">
     <block wx:for="{{ historyList }}" wx:key="*this">
-      <view class="search-history-item">{{ item }}</view>
+      <!-- 搜索页过去的 params.cid的值为undefined -->
+      <navigator url="/pages/goods_list/goods_list?query={{ item }}" class="search-history-item">{{ item }}</navigator>
     </block>
   </view>
 </view>
