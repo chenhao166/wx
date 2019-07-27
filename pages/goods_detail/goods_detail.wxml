@@ -1,2 +1,41 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<!-- 轮播图 -->
+<swiper class="slider" indicator-dots autoplay circular>
+ <block wx:for="{{ good_all.pics }}" wx:key="pics_id">
+   <swiper-item>
+    <image bindtap="previewImage" data-current="{{item.pics_big_url}}" src="{{item.pics_big_url}}" class="slider-images"></image>
+  </swiper-item>
+ </block>
+</swiper>
+<!-- 商品信息 -->
+<view class="detail-info">
+  <view class="detail-info-price">￥{{ good_all.goods_price}}</view>
+  <view class="detail-info-main">
+    <view class="detail-info-main-left">{{ good_all.goods_name }}</view>
+    <view class="detail-info-main-right">
+      <view class="detail-info-right-icon iconfont icon-shoucang"></view>
+      <view class="detail-info-right-text">收藏</view>
+    </view>
+  </view>
+  <view class="detail-info-bottom">快递：免运费</view>
+</view>
+<!-- 分隔条 -->
+<view class="divider"></view>
+<!-- 富文本展示 -->
+<view class="goods-detail-title"> 宝贝详情 </view>
+<rich-text class="goods-detail-rich"  nodes="{{ good_all.goods_introduce }}"></rich-text>
+<view class="div"></view>
+
+<!-- 底部固定栏 -->
+<view class="detail-bar">
+  <view class="detail-bar-service">
+    <button class="detail-bar-service-button" open-type="contact">调客服</button>
+    <view class="detail-bar-service-icon iconfont icon-lianxikefu"></view>
+    <view  class="detail-bar-service-text">联系客服</view>
+  </view>
+  <navigator url="/pages/cart/cart" open-type="switchTab" class="detail-bar-cart">
+     <view class="detail-bar-cart-icon iconfont icon-gouwu3"></view>
+    <view>购物车</view>
+  </navigator>
+  <view bindtap="addToCart" class="detail-bar-addCart">加入购物车</view>
+  <view class="detail-bar-buy">立即购买</view>
+</view>

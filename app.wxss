@@ -1,5 +1,13 @@
 /**app.wxss**/
 image{
-  /* background-color: #ccc; */
+  background-color: rgb(238, 235, 235);
   vertical-align: top;
+}
+/* 全局引入字体图标 */
+@import "/styles/iconfont.wxss";
+
+/* 分隔条 */
+.divider{
+  height: 20rpx;
+  background-color: #f4f4f4;
 }
