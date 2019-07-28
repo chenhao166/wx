@@ -1,2 +1,32 @@
+<!-- 收货人、收货地址 -->
+<view class="cart-userInfo">
+  <!-- 未添加  -->
+  <view class="cart-userInfo-empty" wx:if="{{ !userInfo.name }}">
+    <button class="cart-userInfo-empty-button">添加收货地址</button>
+  </view>
+  <!-- 己添加 -->
+  <view class="cart-userInfo-selected" wx:else>
+    <view class="cart-userInfo-item">
+      <text space="emsp" class="cart-userInfo-item-name">收货人： {{ userInfo.name }}  {{ userInfo.tel }}</text>
+      <text class="cart-userInfo-icon"></text>
+    </view>
+    <view class="cart-userInfo-item">
+      <text class="cart-userInfo-item-address">收货地址：{{ userInfo.address }}</text>
+    </view>
+  </view>
+</view>
 
-
+<!-- 商家信息 -->
+<!-- <view class="goods-store">
+  <view class="goods-store-name-icon">%</view>
+  <view class="goods-store-name-name">小米生活家</view>
+</view> -->
+<!-- 商品信息 -->
+<!-- <view>
+  <block wx:for="{{ 1 }}" wx:key="">
+    <view></view>
+    <image class="" src=""></image>
+    <view></view>
+  </block>
+</view> -->
+<!-- 商品结算 -->

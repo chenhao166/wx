@@ -1,1 +1,23 @@
-/* pages/cart/cart.wxss */
+/* 收货人及地址 */
+.cart-userInfo{
+  min-height: 200rpx;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+  font-size: 32rpx;
+  font-family: 'Microsoft Yahei';
+  border-bottom: 10rpx solid #eb4450;
+}
+.cart-userInfo-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.cart-userInfo-icon{
+  width:16rpx;
+  height:16rpx;
+  border-top: 3rpx solid #999;
+  border-right: 3rpx solid #999;
+  display: block;
+  transform: translateX(-20rpx) rotate(45deg);
+}
